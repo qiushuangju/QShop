@@ -1,0 +1,557 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.padding-content {
+    padding: 4px 0;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.pr-5 {
+    padding-right: 5px;
+}
+
+.pl-5 {
+    padding-left: 5px;
+}
+
+.block {
+    display: block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.inlineBlock {
+    display: block;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: ' ';
+        clear: both;
+        height: 0;
+    }
+}
+
+code {
+    background: #eef1f6;
+    padding: 15px 16px;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 36px;
+    font-size: 15px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    a {
+        color: #337ab7;
+        cursor: pointer;
+        &:hover {
+            color: rgb(32, 160, 255);
+        }
+    }
+}
+
+.warn-content {
+    background: rgba(66, 185, 131, 0.1);
+    border-radius: 2px;
+    padding: 16px;
+    padding: 1rem;
+    line-height: 1.6rem;
+    word-spacing: 0.05rem;
+    a {
+        color: #42b983;
+        font-weight: 600;
+    }
+}
+
+//main-container全局样式
+.app-container {
+    padding: 20px;
+}
+
+.components-container {
+    margin: 30px 50px;
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sub-navbar {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    transition: 600ms ease position;
+    // background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+    background: #d0d0d0;
+    .subtitle {
+        font-size: 20px;
+        color: #fff;
+    }
+    &.draft {
+        background: #d0d0d0;
+    }
+    &.deleted {
+        background: #d0d0d0;
+    }
+}
+
+.link-type,
+.link-type:focus {
+    color: #337ab7;
+    cursor: pointer;
+    &:hover {
+        color: rgb(32, 160, 255);
+    }
+}
+
+.filter-container {
+    padding-bottom: 0px;
+    .filter-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0px;
+    }
+    .filter-items {
+        display: inline-block;
+        margin-left: 20px;
+    }
+    .iconfont {
+        margin-right: 3px;
+        font-size: 11px;
+    }
+    .export-excel-wrapper {
+        display: inline-block;
+    }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+    line-height: 16px;
+}
+
+.multiselect--active {
+    z-index: 1000 !important;
+}
+
+//table 头部居中
+table thead th {
+    text-align: center !important;
+}
+
+// table td 上下间距减小
+.el-table td {
+    padding: 3px 0 !important;
+}
+
+.el-table th {
+    padding: 5px 0 !important;
+}
+
+.body-small .el-card__body {
+    padding: 10px 5px;
+}
+
+//分页间距修改
+.pagination-container {
+    background: #fff;
+    padding: 10px !important;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    .is-in-pagination {
+        margin-left: 5px;
+    }
+}
+
+.color-danger {
+    color: #FD4E4E;
+}
+
+.color-info {
+    color: #337ab7;
+}
+
+.color-success {
+    color: #67c23a;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.card-body-none .el-card__body {
+    padding: 0 !important;
+    margin: -1px !important;
+    padding-bottom: 10px !important;
+}
+
+.app-container {
+    background-color: #efefef;
+    padding: 10px;
+}
+
+.el-card__header {
+    height: 34px;
+    line-height: 34px;
+    width: 100%;
+    color: #666;
+    padding: 0 !important;
+    font-weight: bold;
+    padding-left: 9px !important;
+    font-size: 12px;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.dialog-mini {
+    .el-dialog__header {
+        height: 35px;
+        line-height: 35px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        background-color: #f8f8f8;
+        padding: 0 20px !important;
+        .el-dialog__title {
+            line-height: 34px;
+            font-size: 14px;
+            color: #333;
+        }
+        .el-dialog__headerbtn {
+            color: #333;
+            top: 2px;
+            right: 11.5px;
+        }
+    }
+    .el-dialog__footer {
+        height: 50px;
+        width: 100%;
+        text-align: right;
+        padding: 0px 10px !important;
+        border-top: 1px solid #eee;
+        border-radius: 0 0 4px 4px;
+        background-color: #f8f8f8;
+        line-height: 50px;
+    }
+    .el-dialog__body {
+        padding: 10px !important;
+        .el-form {
+            padding-right: 20px;
+            padding-top: 10px;
+        }
+    }
+    .el-form-item__label {
+        font-size: 12px !important;
+        font-weight: normal !important;
+    }
+    .el-form-item.el-form-item--small {
+        margin-bottom: 10px;
+    }
+    .el-form-item.is-error.is-required.el-form-item--small {
+        margin-bottom: 18px;
+    }
+    .el-select {
+        width: 100%;
+    }
+}
+
+// .el-table--border{
+// 	border-color:#ebeef5;
+// }
+.compent-dialog-body {
+    margin: -10px;
+    .table {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        border-bottom: 0;
+        border-right: 0;
+    }
+    .content {
+        padding: 10px;
+    }
+}
+
+.v-modal {
+    z-index: 2000 !important;
+}
+
+// flex布局
+.flex-column {
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    flex-basis: 0%;
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+    flex-basis: 0%;
+    display: flex;
+}
+
+.flex-item {
+    flex: 1 !important;
+    ;
+    flex-basis: 0% !important;
+    overflow: auto;
+}
+
+.fh {
+    height: 100%;
+}
+
+.ls-border {
+    border: 1px solid #EBEEF5;
+}
+
+// 垂直居中
+.VMB {
+    &::before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .VM {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.ellipsis {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.navbar {
+    background: #409eff;
+    .hamburger-container {
+        line-height: 55px;
+        height: 55px;
+        float: left;
+        padding: 0 10px;
+    }
+    .avatar-container {
+        height: 55px;
+        display: inline-block;
+        position: absolute;
+        line-height: 55px;
+        right: 35px;
+        .avatar-wrapper {
+            cursor: pointer;
+            position: relative;
+            .el-icon-caret-bottom {
+                position: absolute;
+                right: -22px;
+                top: 18px;
+                font-size: 16px;
+            }
+        }
+    }
+    .logo {
+        text-align: left;
+        float: left;
+        padding-left: 12px;
+        padding-right: 8px;
+        height: 55px;
+        line-height: 55px;
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    }
+    .hamburger-container {
+        color: white;
+    }
+    .avatar-container {
+        color: white;
+    }
+    .logo {
+        color: white;
+    }
+}
+
+.custom-theme {
+    #app {
+        .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+        .sidebar-container .el-submenu .el-menu-item {
+            background-color: $subMenuBg !important;
+            &:hover {
+                background-color: $menuHover !important;
+            }
+        }
+    }
+    .navbar {
+        border-bottom: 0 !important;
+        background-color: #001529;
+        .hamburger-container {
+            color: white;
+        }
+        .avatar-container {
+            color: white;
+        }
+        .logo {
+            color: white;
+        }
+    }
+}
+
+// margin
+.m-l-15 {
+    margin-left: 15px;
+}
+
+.m-l-50 {
+    margin-left: 50px;
+}
+
+.m-l-80 {
+    margin-left: 80px;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.oneline-hide {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.form-item-help a {
+    margin: 0 3px
+}
+
+.form-item-help .extra,
+.form-item-help small {
+    color: rgba(0, 0, 0, .45);
+    font-size: 12.5px!important
+}
+
+.form-item-help .extra {
+    margin-bottom: 4px!important
+}
+
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.flex-box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.card-title {
+    font-size: 14.5px;
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, .75);
+}
+
+.table-wrapper {
+    margin-top: 15px;
+}
+
+// form 左右字体行距
+.ant-form-item-label {
+    line-height: 28px !important;
+}
+
+.ant-form-item-control {
+    line-height: 28px !important;
+}
+
+.ant-form-item label {
+    font-weight: 600 !important;
+}
+
+.ant-form label {
+    font-size: 13px !important;
+}
+
+.form-item-help {
+    // margin-top: -5px;
+}
+
+.help {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 12.5px !important;
+}

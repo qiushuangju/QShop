@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .dividing-ine {
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .m-t-m {
+            margin-top: 10px;
+        }
+
+        .box-flex {
+            display: flex;
+        }
+
+        .align-center {
+            align-items: center
+        }
+
+        .w-200 {
+            width: 200px;
+        }
+
+        .m-r-m {
+            margin-right: 10px;
+        }
+
+        i {
+            font-size: 28px;
+        }
+
+        .el-icon-circle-plus-outline {
+            color: rgb(20, 130, 240);
+        }
+
+        i.el-icon-remove-outline {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <template v-if="activeName=='input'">
+                <el-input v-model="inputValue" :size="inputSize" :placeholder="inputPlaceholder"></el-input>
+            </template>
+            <template v-if="activeName=='textarea'">
+                <el-input v-model="textareaValue" type="textarea" :rows="textareaRows"></el-input>
+            </template>
+
+            <template v-if="activeName=='radio'" v-for="item in addRadiosItems">
+                <template v-if="item.textValue!=null && item.textValue!=''">
+                    <el-radio v-model="radioValue" :label="item.textValue"></el-radio>
+                </template>
+            </template>
+            <template v-if="activeName=='checkbox'" v-for="item in addCheckboxItems">
+                <template v-if="item.textValue!=null && item.textValue!=''">
+                    <el-checkbox v-model="checkValue" :label="item.textValue"></el-checkbox>
+                </template>
+            </template>
+            <template v-if="activeName=='upload'" v-for="item in addCheckboxItems">
+                <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" multiple :limit="3">
+                    <el-button size="small" type="primary">点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                </el-upload>
+            </template>
+        </div>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    var GetQueryString = function(name) {
+      var search = decodeURI(decodeURI(window.location.search))
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+      var r = search.substr(1).match(reg)
+      if (r != null) return unescape(r[2])
+      return null
+    }
+
+    // eslint-disable-next-line no-undef
+    var appVue = new Vue({
+      el: '#app',
+      data: {
+        activeName: 'radio',
+        inputSize: '',
+        inputPlaceholder: '请输入',
+        inputValue: '',
+        textareaValue: '',
+        textareaRows: '',
+        radioValue: '',
+        radioItems: [],
+        checkValue: [],
+        addRadiosItems: [{
+          textValue: ''
+        }],
+        addCheckboxItems: [{
+          textValue: ''
+        }]
+      },
+      created() {
+        var info = GetQueryString('info')
+        if (info && info.length > 0) {
+          var infoObj = JSON.parse(info)
+          if (infoObj && infoObj.gValue != '') {
+            this.title = infoObj.gValue
+          }
+        }
+      },
+      methods: {
+        getInfo() {
+          return this.fileList
+        },
+        handleSucess(response, file, fileList) {
+          console.log(response)
+          console.log(file)
+          if (response.code == 200) {
+            if (response.result.length > 0) {
+              this.fileList.push({
+                name: response.result[0].fileName,
+                url: 'http://119.84.146.233:52791/' + response.result[0].filePath
+              })
+            }
+          }
+        },
+        handleRemove(file, fileList) {
+          var indexOf = fileList.indexOf(file)
+          this.fileList.split(indexOf, 1)
+        },
+        handleClick() {
+
+        },
+        addRadiosItem() {
+          this.addRadiosItems.push({
+            textValue: ''
+          })
+        },
+        deleteItem(item) {
+          var indexOf = this.addRadiosItems.indexOf(item)
+          this.addRadiosItems.splice(indexOf, 1)
+        },
+        addCheckboxItem() {
+          this.addCheckboxItems.push({
+            textValue: ''
+          })
+        },
+        deleteCheckboxItem(item) {
+          var indexOf = this.addCheckboxItems.indexOf(item)
+          this.addCheckboxItems.splice(indexOf, 1)
+        }
+      }
+
+    })
+
+    // eslint-disable-next-line no-unused-vars
+    var getData = function() {
+      return appVue.fileList
+    }
+</script>
+
+</html>

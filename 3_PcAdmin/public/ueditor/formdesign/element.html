@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .dividing-ine {
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .m-t-m {
+            margin-top: 10px;
+        }
+
+        .box-flex {
+            display: flex;
+        }
+
+        .align-center {
+            align-items: center
+        }
+
+        .w-200 {
+            width: 200px;
+        }
+
+        .m-r-m {
+            margin-right: 10px;
+        }
+
+        i {
+            font-size: 28px;
+        }
+
+        .el-icon-circle-plus-outline {
+            color: rgb(20, 130, 240);
+        }
+
+        i.el-icon-remove-outline {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <el-tabs v-model="activeName" @tab-click="handleClick">
+                <el-tab-pane label="input输入框" name="input">
+                    <el-form ref="form" label-width="70px">
+                        <el-form-item label="尺寸">
+                            <el-radio v-model="inputSize" label="medium">medium</el-radio>
+                            <el-radio v-model="inputSize" label="small">small</el-radio>
+                            <el-radio v-model="inputSize" label="mini">mini</el-radio>
+                        </el-form-item>
+                        <el-form-item label="提示框语">
+                            <el-input v-model="inputPlaceholder" size="small"></el-input>
+                        </el-form-item>
+                        <el-form-item label="默认值">
+                            <el-input v-model="inputValue" size="small"></el-input>
+                        </el-form-item>
+                        <div class="dividing-ine"></div>
+                        <el-form-item class="m-t-m" label="示例">
+                            <el-input v-model="inputValue" :size="inputSize" :placeholder="inputPlaceholder"></el-input>
+                        </el-form-item>
+                    </el-form>
+                </el-tab-pane>
+                <el-tab-pane label="textarea文本框" name="textarea">
+                    <el-form ref="form" label-width="70px">
+                        <el-form-item label="行数">
+                            <el-input type="number" size="small" v-model="textareaRows"></el-input>
+                        </el-form-item>
+                        <el-form-item label="默认值">
+                            <el-input type="textarea" autosize v-model="textareaValue"></el-input>
+                        </el-form-item>
+                        <div class="dividing-ine"></div>
+                        <el-form-item class="m-t-m" label="示例">
+                            <el-input v-model="textareaValue" type="textarea" :rows="textareaRows"></el-input>
+                        </el-form-item>
+                    </el-form>
+                </el-tab-pane>
+                <el-tab-pane label="radio单选" name="radio">
+                    <el-form ref="form" label-width="70px">
+                        <el-form-item label="添加选项">
+                            <div class="box-flex align-center" v-for="(item,index) in addRadiosItems">
+                                <el-input size="small" v-model="item.textValue" class="w-200 m-r-m" placeholder="请选择时段">
+                                </el-input>
+                                <span class="box-flex align-center m-r-m" @click="addRadiosItem">
+                                    <i class="el-icon-circle-plus-outline"></i><span class="icon-name"></span>
+                                </span>
+                                <span class="box-flex align-center m-r-m" v-if="index>=1" @click="deleteItem(item)">
+                                    <i class="el-icon-remove-outline"></i><span class="icon-name"></span>
+                                </span>
+                            </div>
+                        </el-form-item>
+                        <!-- <el-form-item label="提示框语">
+                                    <el-input v-model="inputPlaceholder" size="small"></el-input>
+                                </el-form-item>
+                                <el-form-item label="默认值">
+                                    <el-input v-model="radioValue" size="small"></el-input>
+                                </el-form-item> -->
+                        <div class="dividing-ine"></div>
+                        <el-form-item class="m-t-m" label="示例">
+                            <template v-for="item in addRadiosItems">
+                                <template v-if="item.textValue!=null && item.textValue!=''">
+                                    <el-radio v-model="radioValue" :label="item.textValue"></el-radio>
+                                </template>
+                            </template>
+                        </el-form-item>
+                    </el-form>
+                </el-tab-pane>
+                <el-tab-pane label="select下拉选择框" name="select">
+                    <el-form ref="form" label-width="70px">
+                        <el-form-item label="添加选项">
+                            <div class="box-flex align-center" v-for="(item,index) in addCheckboxItems">
+                                <el-input size="small" v-model="item.textValue" class="w-200 m-r-m" placeholder="请选择时段">
+                                </el-input>
+                                <span class="box-flex align-center m-r-m" @click="addCheckboxItem">
+                                    <i class="el-icon-circle-plus-outline"></i><span class="icon-name"></span>
+                                </span>
+                                <span class="box-flex align-center m-r-m" v-if="index>=1"
+                                    @click="deleteCheckboxItem(item)">
+                                    <i class="el-icon-remove-outline"></i><span class="icon-name"></span>
+                                </span>
+                            </div>
+                        </el-form-item>
+                        <!-- <el-form-item label="提示框语">
+                                            <el-input v-model="inputPlaceholder" size="small"></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="默认值">
+                                            <el-input v-model="radioValue" size="small"></el-input>
+                                        </el-form-item> -->
+                        <div class="dividing-ine"></div>
+                        <el-form-item class="m-t-m" label="示例">
+                            <template v-for="item in addCheckboxItems">
+                                <template v-if="item.textValue!=null && item.textValue!=''">
+                                    <el-checkbox v-model="checkValue" :label="item.textValue"></el-checkbox>
+                                </template>
+                            </template>
+                        </el-form-item>
+                    </el-form>
+
+                </el-tab-pane>
+                <el-tab-pane label="upload文件上传" name="upload">
+                    <el-form ref="form" label-width="70px">
+                        <el-form-item class="m-t-m" label="示例">
+                            <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" multiple
+                                :limit="3">
+                                <el-button size="small" type="primary">点击上传</el-button>
+                                <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                            </el-upload>
+                        </el-form-item>
+                    </el-form>
+                </el-tab-pane>
+            </el-tabs>
+        </div>
+    </div>
+    <div id="node" style="display:none">
+        <iframe src="/ueditor/formdesign/el-input.html" leipiplugins="element" style="height:100px;"></iframe>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript" src="../dialogs/internal.js"></script>
+<script>
+    var GetQueryString = function(name) {
+      var search = decodeURI(decodeURI(window.location.search))
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+      var r = search.substr(1).match(reg)
+      if (r != null) return unescape(r[2])
+      return null
+    }
+
+    // eslint-disable-next-line no-undef
+    var appVue = new Vue({
+      el: '#app',
+      data() {
+        return {
+          activeName: 'radio',
+          inputSize: '',
+          inputPlaceholder: '请输入',
+          inputValue: '',
+          textareaValue: '',
+          textareaRows: '',
+          radioValue: '',
+          radioItems: [],
+          checkValue: [],
+          addRadiosItems: [{
+            textValue: ''
+          }],
+          addCheckboxItems: [{
+            textValue: ''
+          }]
+        }
+      },
+      created() {
+        var info = GetQueryString('info')
+        if (info && info.length > 0) {
+          var infoObj = JSON.parse(info)
+          if (infoObj && infoObj.gValue != '') {
+            this.title = infoObj.gValue
+          }
+          console.log(infoObj)
+        }
+      },
+      mounted() {
+        var _this = this
+        var oNode = null
+        if (UE.plugins['element'].editdom) {
+          oNode = UE.plugins['element'].editdom
+          console.log(oNode)
+        }
+        dialog.oncancel = function() {
+          if (UE.plugins['element'].editdom) {
+            delete UE.plugins['element'].editdom
+          }
+        }
+        dialog.onok = function() {
+          var pararm = {
+            activeName: _this.activeName,
+            inputSize: _this.inputSize,
+            inputPlaceholder: _this.inputPlaceholder,
+            inputValue: _this.inputValue,
+            textareaValue: _this.textareaValue,
+            textareaRows: _this.textareaRows,
+            radioValue: _this.radioValue,
+            radioItems: _this.radioItems,
+            checkValue: _this.checkValue,
+            addRadiosItems: _this.addRadiosItems,
+            addCheckboxItems: _this.addCheckboxItems
+          }
+          console.log(pararm)
+          var pararmStr = encodeURI(JSON.stringify(pararm), 'utf-8')
+          var iframeSrc = '/ueditor/formdesign/element-detail.html?info=' + pararmStr
+          document.querySelector('iframe').setAttribute('src', iframeSrc)
+          var html = document.getElementById('node').innerHTML
+          editor.execCommand('insertHtml', html)
+        }
+      },
+      methods: {
+        getInfo() {
+          return this.fileList
+        },
+        handleSucess(response, file, fileList) {
+          if (response.code == 200) {
+            if (response.result.length > 0) {
+              this.fileList.push({
+                name: response.result[0].fileName,
+                url: 'http://119.84.146.233:52791/' + response.result[0].filePath
+              })
+            }
+          }
+        },
+        handleRemove(file, fileList) {
+          var indexOf = fileList.indexOf(file)
+          this.fileList.split(indexOf, 1)
+        },
+        handleClick() {
+
+        },
+        addRadiosItem() {
+          this.addRadiosItems.push({
+            textValue: ''
+          })
+        },
+        deleteItem(item) {
+          var indexOf = this.addRadiosItems.indexOf(item)
+          this.addRadiosItems.splice(indexOf, 1)
+        },
+        addCheckboxItem() {
+          this.addCheckboxItems.push({
+            textValue: ''
+          })
+        },
+        deleteCheckboxItem(item) {
+          var indexOf = this.addCheckboxItems.indexOf(item)
+          this.addCheckboxItems.splice(indexOf, 1)
+        }
+      }
+
+    })
+
+    // eslint-disable-next-line no-unused-vars
+    var getData = function() {
+      return appVue.fileList
+    }
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>表单设计器 - 清单</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="generator" content="WMS" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+  <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+    <![endif]-->
+  <link rel="stylesheet" href="leipi.style.css">
+  <script type="text/javascript" src="../dialogs/internal.js"></script>
+</head>
+
+<body>
+
+  <div class="well">
+    <p>
+      <button type="button" onclick="leipiDialog.exec('text');" class="btn btn-info btn-small">单行输入框</button>
+      <button type="button" onclick="leipiDialog.exec('textarea');" class="btn btn-info btn-small">多行输入框</button>
+      <button type="button" onclick="leipiDialog.exec('select');" class="btn btn-info btn-small">下拉菜单</button>
+      <button type="button" onclick="leipiDialog.exec('radios');" class="btn btn-info btn-small">单选框</button>
+      <button type="button" onclick="leipiDialog.exec('checkboxs');" class="btn btn-info btn-small">复选框</button>
+    </p>
+    <br />
+    <p>
+      <button type="button" onclick="leipiDialog.exec('listctrl');" class="btn btn-info btn-small">列表控件</button>
+      <button type="button" onclick="leipiDialog.exec('upload');" class="btn btn-info btn-small">上传附件</button>
+
+      <!-- <button type="button" onclick="leipiDialog.exec('element');" class="btn btn-info btn-small">element-ui</button> -->
+    </p>
+  </div>
+  <script type="text/javascript">
+    var leipiDialog = {
+      exec: function(method) {
+        editor.execCommand(method)
+        dialog.close(true)
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+@import "~ant-design-vue/es/style/themes/default.less";
+
+// 编辑器
+.editor {
+  min-width: 370px;
+  height: 88vh;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  overflow: hidden;
+
+  // 标题
+  &-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #595961;
+    margin-top: 5px;
+  }
+
+  // 内容
+  &-content {
+    margin-top: 15px;
+    width: 340px;
+  }
+
+  // 副标题
+  .sub-title {
+    text-align: center;
+    font-size: 14px;
+    color: #9797a1;
+    margin-bottom: 15px;
+    line-height: 20px;
+  }
+
+  // 文字标签
+  .label,
+  .tips-wrap,
+  .link {
+    display: block;
+    line-height: 32px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .label {
+
+    margin-left: 15px;
+    margin-right: 5px;
+
+    &.value {
+      max-width: 164px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+    }
+  }
+
+  .tips-wrap {
+    flex: 1;
+    color: #9797a1;
+  }
+
+  // 区块
+  .block-box {
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
+    background: #f0f2f5;
+    margin: 0 auto 10px;
+
+    &.drag {
+      .block-title {
+        cursor: move;
+      }
+    }
+
+    .block-title {
+      line-height: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+
+
+      .link,
+      .tips {
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      .link {
+        letter-spacing: 1px
+      }
+
+      .tips {
+        color: #9797a1;
+      }
+    }
+
+    .block-item {
+      display: flex;
+      // justify-content: space-between;
+      margin-bottom: 15px;
+
+      .tips {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #9797a1;
+      }
+
+      &-common {
+        flex: 1;
+
+        &-row {
+          display: flex;
+          margin-bottom: 6px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &-custom {
+        margin-left: 20px;
+      }
+
+    }
+  }
+
+}
+
+// 颜色选择器
+
+.item-colorPicker {
+  display: flex;
+
+  // 重置颜色
+  .rest-color {
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 32px;
+    cursor: pointer;
+    color: @primary-color !important;
+  }
+
+  // 颜色选择组件
+  .m-colorPicker {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    padding: 5px;
+    width: 61px;
+
+    :v-deep(.colorBtn) {
+      cursor: pointer;
+      width: 48px;
+      height: 20px;
+      border: 1px solid #000;
+    }
+
+    :v-deep(.box) {
+      left: -152px;
+      top: 35px;
+    }
+  }
+
+}
+
+// 多选框
+.item-checkbox {
+  .ant-checkbox-wrapper {
+    margin: 0 10px 0 0;
+    line-height: 28px;
+    font-size: 12px;
+  }
+
+  .ant-checkbox-wrapper+.ant-checkbox-wrapper {
+    margin-left: 0;
+  }
+}
+
+// 滑块组件
+.item-slider {
+  width: 100%;
+  display: flex;
+
+  .ant-slider {
+    flex: 1;
+    margin: 10px 10px 10px 6px;
+
+    :v-deep(.ant-slider-rail) {
+      background: #dfdfe1;
+    }
+  }
+}
+
+// 单位
+.unit-text {
+  padding: 0 10px;
+  line-height: 32px;
+  font-size: 12px;
+}
+
+// 新增数据
+.data-add {
+  margin-top: 10px;
+
+  button {
+    width: 100%;
+    color: @primary-color;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 12px;
+    border-color: #cccccc21;
+
+    &:hover {
+      border-color: @primary-color;
+    }
+  }
+}
+
+// 覆盖默认样式
+a {
+  user-select: none;
+}
+
+.ant-input {
+  width:180px !important;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.ant-tabs {
+  overflow: unset;
+
+  :v-deep(.ant-tabs-nav-container) {
+    font-size: 12.5px;
+
+    .ant-tabs-nav {
+      width: 100%;
+
+      .ant-tabs-tab {
+        padding: 12px 20px;
+        color: #595961;
+        width: 105px;
+        margin: 0 30px;
+        text-align: center;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: #595961;
+      height: 3px;
+    }
+  }
+}
+
+.ant-radio-group {
+  font-size: 12px;
+
+  :v-deep(.ant-radio-button-wrapper) {
+    height: 30px;
+    line-height: 28px;
+  }
+}
+
+.subtitle{
+  color: red;
+}
+
+.checkbox {
+  position: relative;
+  width: 16px;
+  margin-right: 6px;
+  height: 16px;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+// .checkbox:checked {
+//   border-color: #595961;
+//   // background: $color url(../../assets/diy/gou.png) no-repeat center;
+//   background-size: 10px auto;
+// }

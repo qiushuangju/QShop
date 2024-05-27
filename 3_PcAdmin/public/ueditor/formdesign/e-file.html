@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+	<div id="app">
+
+		<el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" :on-change="handleChange"
+			:file-list="fileList" name="files">
+			<el-button size="small" type="primary">点击上传</el-button>
+			<div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+		</el-upload>
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script>
+		function GetQueryString(name) {
+		  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+		  var r = window.location.search.substr(1).match(reg)
+		  if (r != null) return unescape(r[2])
+		  return null
+		}
+		new Vue({
+		  el: '#app',
+		  data: {
+		    fileList: []
+		  },
+		  created() {
+		    var info = GetQueryString('info')
+		    var infoObj = JSON.parse(info)
+		    console.log(infoObj)
+		    if (infoObj && infoObj.orgvalue != '') {
+
+		    }
+		  },
+		  methods: {
+		    handleChange(file, fileList) {
+		      this.fileList = fileList.slice(-3)
+		    }
+		  }
+		})
+	</script>
+</body>
+
+</html>

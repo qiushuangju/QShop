@@ -1,0 +1,16 @@
+import image from '@/assets/icons/page/components/image.svg?inline'
+import banner from '@/assets/icons/page/components/banner.svg?inline'
+import article from '@/assets/icons/page/components/article.svg?inline'
+import navBar from '@/assets/icons/page/components/navBar.svg?inline'
+import notice from '@/assets/icons/page/components/notice.svg?inline'
+import search from '@/assets/icons/page/components/search.svg?inline'
+import video from '@/assets/icons/page/components/video.svg?inline'
+import window from '@/assets/icons/page/components/window.svg?inline'
+import goods from '@/assets/icons/page/components/goods.svg?inline'
+import service from '@/assets/icons/page/components/service.svg?inline'
+import guide from '@/assets/icons/page/components/guide.svg?inline'
+import richText from '@/assets/icons/page/components/richText.svg?inline'
+import blank from '@/assets/icons/page/components/blank.svg?inline'
+import goodsCate from '@/assets/icons/page/components/goodsCate.svg?inline'
+
+export { image, banner, article, navBar, notice, search, video, window, goodsCate,goods, service, guide, richText, blank }

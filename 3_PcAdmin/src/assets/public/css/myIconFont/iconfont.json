@@ -1,0 +1,100 @@
+{
+  "id": "3342903",
+  "name": "NomalShop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "电商",
+  "glyphs": [
+    {
+      "icon_id": "4954935",
+      "name": "金额",
+      "font_class": "jine",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "9974396",
+      "name": "走势图",
+      "font_class": "zoushitu",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
+      "icon_id": "77040",
+      "name": "优惠券",
+      "font_class": "youhuiquan1",
+      "unicode": "34231",
+      "unicode_decimal": 213553
+    },
+    {
+      "icon_id": "11111026",
+      "name": "售后",
+      "font_class": "shouhou",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "12889882",
+      "name": "统计分析-项目表格统计",
+      "font_class": "tongjifenxi-xiangmubiaogetongji",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "18790809",
+      "name": "美肤，魔法棒",
+      "font_class": "meifumofabang",
+      "unicode": "e740",
+      "unicode_decimal": 59200
+    },
+    {
+      "icon_id": "29199548",
+      "name": "个人中心-我的",
+      "font_class": "yonghu-copy",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "1435252",
+      "name": "个人中心-我的",
+      "font_class": "yonghu",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "29199554",
+      "name": "3.1 全部商品",
+      "font_class": "shangpin-copy-copy",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    },
+    {
+      "icon_id": "29199555",
+      "name": "订单",
+      "font_class": "dingdan-copy",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "3187941",
+      "name": "消费者",
+      "font_class": "xiaofeizhe",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "11372658",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "29114513",
+      "name": "3.1 全部商品",
+      "font_class": "shangpin-copy",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    }
+  ]
+}

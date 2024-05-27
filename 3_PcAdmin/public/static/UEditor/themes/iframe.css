@@ -1,0 +1,21 @@
+/*可以在这里添加你自己的css*/
+* {
+  max-width: 100% !important;
+}
+
+body {
+  font-size: 14px;
+}
+
+a {
+    color: #3284e6;
+    word-break: break-all;
+}
+
+p {
+  margin: 0
+}
+
+img {
+  display: block;
+}

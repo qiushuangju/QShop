@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3342903 */
+  src: url('iconfont.woff2?t=1650561247483') format('woff2'),
+       url('iconfont.woff?t=1650561247483') format('woff'),
+       url('iconfont.ttf?t=1650561247483') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jine:before {
+  content: "\e658";
+}
+
+.icon-zoushitu:before {
+  content: "\e6fe";
+}
+
+.icon-youhuiquan1:before {
+  content: "\34231";
+}
+
+.icon-shouhou:before {
+  content: "\e681";
+}
+
+.icon-tongjifenxi-xiangmubiaogetongji:before {
+  content: "\e626";
+}
+
+.icon-meifumofabang:before {
+  content: "\e740";
+}
+
+.icon-yonghu-copy:before {
+  content: "\e8b0";
+}
+
+.icon-yonghu:before {
+  content: "\e638";
+}
+
+.icon-shangpin-copy-copy:before {
+  content: "\e8b1";
+}
+
+.icon-dingdan-copy:before {
+  content: "\e8b2";
+}
+
+.icon-xiaofeizhe:before {
+  content: "\e601";
+}
+
+.icon-dingdan:before {
+  content: "\e8ae";
+}
+
+.icon-shangpin-copy:before {
+  content: "\e8af";
+}
+
