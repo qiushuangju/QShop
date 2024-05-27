@@ -18,13 +18,13 @@ QShop商城，是全新推出的一款轻量级、高性能、前后端分离的
 
 ### 页面展示
 #### 前端展示
-![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/showxiaochengxu01.png)
-![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/showxiaochengxu02.png)
+![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/showxiaochengxu01.png)
+![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/showxiaochengxu02.png)
 
 #### 后端展示
-![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/showadmin01.png)
-![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/showadmin02.png)
-![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/showadmin03.png)
+![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/showadmin01.png)
+![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/showadmin02.png)
+![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/showadmin03.png)
 
 
 
@@ -37,7 +37,7 @@ QShop商城，是全新推出的一款轻量级、高性能、前后端分离的
 - 商城后台演示 :http://demo.qshopcn.com
 - 用户名和密码：qshop qshop
 - 前端演示
-- ![输入图片说明](9_%E6%96%87%E6%A1%A3/%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/xiaochengxuma.jpg)
+- ![输入图片说明](https://apidemo.qshopcn.com/wwwroot/docImg/show/xiaochengxuma.jpg)
 
 
 
