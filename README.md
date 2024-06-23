@@ -43,11 +43,10 @@ QShop商城，是全新推出的一款轻量级、高性能、前后端分离的
 
 
 ### 部署推荐环境
-
-- CentOS 7.3
-- Nginx 1.24.0
-- .Net6
-- MySQL 5.7
+- CentOS 7.3/Windows
+- Nginx 1.24.0/IIS
+- .Net6/7/8
+- MySQL 5.7+/SqlServer
 
 
 ### 开发部署
