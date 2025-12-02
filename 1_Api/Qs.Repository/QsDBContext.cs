@@ -127,6 +127,9 @@ namespace Qs.Repository
         public virtual DbSet<ModelStoreExpress> StoreExpresses { get; set; }
         public virtual DbSet<ModelOrderRefundAddress> OrderRefundAddresses { get; set; }
         public virtual DbSet<ModelStoreSettingPay> StoreSettingPays { get; set; }
+        public virtual DbSet<ModelSeckillActivity> SeckillActivities { get; set; }
+        public virtual DbSet<ModelSeckillGoods> SeckillGoods { get; set; }
+        public virtual DbSet<ModelSeckillUserRecord> SeckillUserRecords { get; set; }
 
         //非数据库表格
 
