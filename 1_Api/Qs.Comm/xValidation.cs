@@ -1,4 +1,5 @@
 ﻿using System;
+using Qs.Comm.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,7 @@ namespace Qs.Comm
             msg = xConv.RemoveLastChar(msg);
             if (!check)
             {
-                throw new Exception($"{msg},不能为空");
+                throw new CustomException(400, $"{msg},不能为空");
             }
         }
 
@@ -47,7 +48,7 @@ namespace Qs.Comm
         {
             if (xConv.ToDecimal(val)==0)
             {
-                throw new Exception($"{tip},不能为0");
+                throw new CustomException(400, $"{tip},不能为0");
             }
         }
 
@@ -61,7 +62,7 @@ namespace Qs.Comm
         {
             if (xConv.ToInt(value)==0)
             {
-                throw new Exception($"{tip},不能为0");
+                throw new CustomException(400, $"{tip},不能为0");
             }
         }
 
@@ -75,7 +76,7 @@ namespace Qs.Comm
         {
             if (list == null || list.Count <= 0)
             {  
-              throw new Exception($"{tip},不能为空");
+              throw new CustomException(400, $"{tip},不能为空");
             }
         }
 
@@ -89,7 +90,7 @@ namespace Qs.Comm
         {
             if (string.IsNullOrEmpty(str))
             {
-                throw new Exception($"{tip},不能为空");
+                throw new CustomException(400, $"{tip},不能为空");
             }
         }
         /// <summary>
@@ -101,7 +102,7 @@ namespace Qs.Comm
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(strPhone, @"^1[3456789]\d{9}$"))
             {
-                throw new Exception("请输入正确的手机号码");
+                throw new CustomException(400, "请输入正确的手机号码");
             }
         }
         /// <summary>
@@ -131,7 +132,7 @@ namespace Qs.Comm
             ", RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);
             if (!regex.IsMatch(str.Trim()))
             {
-                throw new Exception("密码必须包含数字,字母,并且至少8位长度");
+                throw new CustomException(400, "密码必须包含数字,字母,并且至少8位长度");
             }
 
 
@@ -158,7 +159,7 @@ namespace Qs.Comm
             }
             else
             {
-                throw new Exception("请输入正确的身份证号码");
+                throw new CustomException(400, "请输入正确的身份证号码");
             }
         }
 

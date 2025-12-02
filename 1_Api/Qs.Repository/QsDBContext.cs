@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using Qs.Comm;
 using Microsoft.AspNetCore.Http;
@@ -127,6 +127,11 @@ namespace Qs.Repository
         public virtual DbSet<ModelStoreExpress> StoreExpresses { get; set; }
         public virtual DbSet<ModelOrderRefundAddress> OrderRefundAddresses { get; set; }
         public virtual DbSet<ModelStoreSettingPay> StoreSettingPays { get; set; }
+
+        // 秒杀相关实体
+        public virtual DbSet<ModelSeckillActivity> SeckillActivities { get; set; }
+        public virtual DbSet<ModelSeckillGoods> SeckillGoods { get; set; }
+        public virtual DbSet<ModelSeckillOrder> SeckillOrders { get; set; }
 
         //非数据库表格
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -6,20 +6,16 @@ using Microsoft.AspNetCore.Http;
 
 namespace Qs.App.Wx
 {
-    /**
-    '签名工具类
-     ============================================================================/// <summary>
-    'api说明：
-    'init();
-    '初始化函数，默认给一些参数赋值。
-    'setKey(key_)'设置商户密钥
-    'createMd5Sign(signParams);字典生成Md5签名
-    'genPackage(packageParams);获取package包
-    'createSHA1Sign(signParams);创建签名SHA1
-    'parseXML();输出xml
-     * 
-     * ============================================================================
-     */
+    /// <summary>
+    /// 签名工具类
+    /// api说明：
+    /// init(); 初始化函数，默认给一些参数赋值。
+    /// setKey(key_) 设置商户密钥
+    /// createMd5Sign(signParams); 字典生成Md5签名
+    /// genPackage(packageParams); 获取package包
+    /// createSHA1Sign(signParams); 创建签名SHA1
+    /// parseXML(); 输出xml
+    /// </summary>
 
     internal class RequestHandler
     {

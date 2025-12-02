@@ -4,22 +4,22 @@ namespace Common.Request.Bsamecity
     public class BsamecityAddfeeParam{
         /// <summary>
         /// 下单时返回的orderId
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string orderId {get; set;}
         /// <summary>
         /// 下单时返回的taskId
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string taskId {get; set;}
         /// <summary>
         /// 订单小费，单位元
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string tips {get; set;}
         /// <summary>
         /// 备注
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string remark {get; set;}
         

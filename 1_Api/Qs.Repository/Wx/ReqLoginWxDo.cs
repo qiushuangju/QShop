@@ -27,7 +27,7 @@ namespace Qs.App.SSO
         /// </summary>
         public string AppKey { get; set; }
 
-        public void Trim()
+        public virtual void Trim()
         {
             if (string.IsNullOrEmpty(Code))
             {
@@ -46,7 +46,7 @@ namespace Qs.App.SSO
             public string WxOpenIdOrPhone { get; set; }
 
 
-            public void Trim()
+            public override void Trim()
             {
                 if (string.IsNullOrEmpty(Code))
                 {

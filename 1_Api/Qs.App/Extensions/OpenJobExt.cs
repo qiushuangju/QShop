@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Linq;
-using Qs.Comm;
 using Qs.Comm;
 using Qs.Repository.Domain;
 using Quartz;

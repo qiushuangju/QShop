@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Qs.App.Base;
 using Qs.App.Interface;
 using Qs.App.Request;
-using Qs.Comm;
 using Qs.Repository;
 using Qs.Repository.Domain;
 using Qs.Repository.Interface;

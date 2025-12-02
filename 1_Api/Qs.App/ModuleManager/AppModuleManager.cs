@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Qs.Comm;
 using Qs.App.Interface;
 using Qs.App.Request;
-using Qs.Comm;
 using Qs.Repository;
 using Qs.Repository.Domain;
 using Qs.Repository.Interface;
