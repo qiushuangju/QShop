@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,7 +12,7 @@ namespace Qs.App.Base
 {
     /// <summary>
     /// 业务层基类，UnitWork用于事务操作，Repository用于普通的数据库操作
-    /// <para>如用户管理：Class UserManagerApp:BaseApp<User></para>
+    /// <para>如用户管理：Class UserManagerApp:BaseApp&lt;User&gt;</para>
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class AppBaseString<T, TDbContext> :AppBase<T,TDbContext> where T : StringEntity where TDbContext: DbContext
@@ -24,7 +24,8 @@ namespace Qs.App.Base
         /// <param name="unitWork"></param>
         /// <param name="repository"></param>
         /// <param name="auth"></param>
-        public AppBaseString(IUnitWork<TDbContext> unitWork, IRepository<T,TDbContext> repository, DbExtension dbExtension, IAuth auth) : base(unitWork, repository, auth)
+        /// <param name="dbExtension"></param>
+        public AppBaseString(IUnitWork<TDbContext> unitWork, IRepository<T,TDbContext> repository, IAuth auth, DbExtension dbExtension) : base(unitWork, repository, auth)
         {
             _dbExtension = dbExtension;
 

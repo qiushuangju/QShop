@@ -4,22 +4,22 @@ namespace Common.Request.Bsamecity
     public class BsamecityCancelParam{
         /// <summary>
         /// 下单时返回的taskId
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string taskId {get; set;}
         /// <summary>
         /// 订单id
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string orderId {get; set;}
         /// <summary>
         /// 取消原因类型
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public int cancelMsgType {get; set;}
         /// <summary>
         /// 取消原因
-        /// <summary>
+        /// </summary>
         /// <value></value>
         public string cancelMsg {get; set;}
         

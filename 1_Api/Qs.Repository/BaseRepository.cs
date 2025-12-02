@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
@@ -13,7 +13,7 @@ namespace Qs.Repository
 {
     public class BaseRepository<T,TDbContext> : IRepository<T,TDbContext> where T : BaseEntity where TDbContext: DbContext
     {
-        private TDbContext _context;
+        protected TDbContext _context;
 
         public BaseRepository(TDbContext context)
         {

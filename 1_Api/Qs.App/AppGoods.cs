@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -13,7 +13,6 @@ using Qs.Repository.Domain;
 using Qs.Repository.Interface;
 using Qs.Repository.Request;
 using Qs.Repository.Response;
-using Qs.Repository.Domain;
 
 namespace Qs.App
 {
