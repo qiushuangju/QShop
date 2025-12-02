@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
@@ -27,6 +27,15 @@ namespace Qs.Repository
         public IQueryable<T> Find(Expression<Func<T, bool>> exp = null)
         {
             return Filter(exp);
+        }
+        
+        /// <summary>
+        /// 查询所有记录
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<T> FindAll()
+        {
+            return Filter(null);
         }
                                                                                     
         public bool Any(Expression<Func<T, bool>> exp)

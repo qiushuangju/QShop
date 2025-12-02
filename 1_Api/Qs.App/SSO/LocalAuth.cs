@@ -183,6 +183,21 @@ namespace Qs.App.SSO
                 return false;
             }
         }
+        
+        /// <summary>
+        /// 获取当前用户ID
+        /// </summary>
+        /// <returns></returns>
+        public string GetUserId()
+        {
+            var user = GetUserByToken(GetToken());
+            if (user != null)
+            {
+                return user.Id;
+            }
+
+            return "";
+        }
 
         /// <summary>
         /// 获取Token

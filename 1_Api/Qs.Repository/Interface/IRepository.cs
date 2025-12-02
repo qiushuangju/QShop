@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : Qs.Domain
 // Author           : Qs
 // Created          : 10-25-2015
@@ -31,6 +31,12 @@ namespace Qs.Repository.Interface
         /// </summary>
         bool Any(Expression<Func<T, bool>> exp);
         IQueryable<T> Find(Expression<Func<T, bool>> exp = null);
+        
+        /// <summary>
+        /// 查询所有记录
+        /// </summary>
+        /// <returns></returns>
+        IQueryable<T> FindAll();
         IQueryable<T> Find(int pageindex = 1, int pagesize = 10, string orderby = "",
             Expression<Func<T, bool>> exp = null);
         int Count(Expression<Func<T, bool>> exp = null);

@@ -1,4 +1,4 @@
-﻿/*
+/*
  *单独提取这个接口，为了以下几点：
  * 1、可以方便的实现webapi 和本地登录相互切换
  * 2、可以方便的使用mock进行单元测试
@@ -64,5 +64,11 @@ namespace Qs.App.Interface
         /// </summary>
         /// <returns></returns>
         bool Logout();
+        
+        /// <summary>
+        /// 获取当前用户ID
+        /// </summary>
+        /// <returns></returns>
+        string GetUserId();
     }
 }
