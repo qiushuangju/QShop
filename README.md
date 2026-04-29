@@ -54,7 +54,7 @@ QShop商城，是全新推出的一款轻量级、高性能、前后端分离的
 
 
 - [查看QShop官网](http://qshopcn.com)
-- [查看QShop源码](https://gitee.com/qiushuochina/QShop)
+- [查看QShop源码](https://gitee.com/EyoSmart/QShop)
 - QQ群: 925862525
 
 
