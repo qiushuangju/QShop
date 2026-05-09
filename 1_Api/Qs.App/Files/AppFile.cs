@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +11,6 @@ using Qs.App.Base;
 using Qs.App.Interface;
 using Qs.App.Request;
 using Qs.App.Response;
-using Qs.Comm;
 using Qs.Comm.Extensions;
 using Qs.Comm.Helpers;
 using Qs.Repository;

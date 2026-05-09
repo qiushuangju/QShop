@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Qs.Comm;
+using System.Collections.Generic;
 using Qs.Comm;
 using Qs.Repository.Domain;
 

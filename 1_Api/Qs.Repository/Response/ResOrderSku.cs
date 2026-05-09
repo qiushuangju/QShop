@@ -35,7 +35,7 @@ namespace Qs.Repository.Response
         /// <summary>
         ///订单状态
         /// </summary>
-        public int OrderStatus { get; set; }
+        public new int OrderStatus { get; set; }
 
         /// <summary>
         /// 状态名

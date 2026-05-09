@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +7,6 @@ using Qs.Comm;
 using Qs.App.Interface;
 using Qs.App.Request;
 using Qs.App.Response;
-using Qs.Comm;
 using Qs.Repository;
 using Qs.Repository.Base;
 using Qs.Repository.Domain;
