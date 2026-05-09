@@ -16,6 +16,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Qs.App;
@@ -24,6 +25,7 @@ using Qs.Comm.Extensions.AutofacManager;
 using Qs.Comm.Middleware;
 using Qs.Repository;
 using Qs.WebApi.Code;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;  
 namespace Qs.WebApi
 {
@@ -108,8 +110,11 @@ namespace Qs.WebApi
                 {
                     option.IncludeXmlComments(name, includeControllerXmlComments: true);
                 }
-
-                option.OperationFilter<GlobalHttpHeaderOperationFilter>(); // 添加httpHeader参数
+                
+                //手动实例化全局header过滤器
+                var appSettings = Configuration.GetSection("AppSetting").Get<AppSetting>();
+                option.OperationFilter<GlobalHttpHeaderOperationFilter>(() => 
+                    new GlobalHttpHeaderOperationFilter(Options.Create(appSettings)));
             });
             services.Configure<AppSetting>(Configuration.GetSection("AppSetting"));
             services.AddControllers(option => { option.Filters.Add<QsFilter>(); })

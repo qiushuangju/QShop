@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -550,6 +550,33 @@ namespace Qs.Comm
             [Description("全部商品")] All = 10,
             [Description("指定商品")] Goods = 20,
             [Description("排除商品")] Exclude = 30,
+        }
+
+        /// <summary>
+        /// 秒杀活动状态(10:待开始 20:进行中 30:已结束 40:已取消)
+        /// </summary>
+        public enum SeckillActivityStatus
+        {
+            /// <summary>
+            ///  待开始
+            /// </summary>
+            [Description("待开始")]
+            WaitStart = 10,
+            /// <summary>
+            ///  进行中
+            /// </summary>
+            [Description("进行中")]
+            Ongoing = 20,
+            /// <summary>
+            ///  已结束
+            /// </summary>
+            [Description("已结束")]
+            Ended = 30,
+            /// <summary>
+            ///  已取消
+            /// </summary>
+            [Description("已取消")]
+            Canceled = 40
         }
 
         /// <summary>
